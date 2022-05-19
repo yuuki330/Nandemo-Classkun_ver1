@@ -1,0 +1,58 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- TensorFlow.jsを用いるために必要なcdn -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/mobilenet"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/knn-classifier"></script>
+
+    <!-- cssファイルの読み込み -->
+    <link href="{% static 'css/index.css' %}" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/slide.css' %}">
+  </head>
+  <body>
+      <ul class="slider">
+        <li class="slider-item slider-item01"></li>
+        <li class="slider-item slider-item02"></li>
+      </ul>
+
+      <div class="console">
+        <!-- アプリ見出し -->
+        <p id="result">Eyenect</p>
+      </div>
+
+      <!-- カメラ設定 -->
+      <video autoplay playsinline muted id="webcam" width="850" height="850"></video>
+
+      <!-- クラス登録用ボタン設定 -->
+      <div class="btn-group1">
+        <button class="btn btn-outline-dark" ontouchstart="" id="class-1">Class_1</button>
+        <button class="btn btn-outline-dark" ontouchstart="" id="class-2">Class_2</button>
+        <button class="btn btn-outline-dark" ontouchstart="" id="class-3">Class_3</button>
+        <button class="btn btn-outline-dark" ontouchstart="" id="class-4">Class_4</button>
+        <button class="btn btn-outline-dark" ontouchstart="" id="class-5">Class_5</button>
+      </div>
+
+      <!-- セーブファイル名入力欄設定 -->
+      <input type="text" id="fname" placeholder="保存するファイル名"/>
+
+      <!-- セーブ用ボタン設定 -->
+      <div class="btn-group2">
+        <button class="btn btn-outline-dark2" ontouchstart="" id="SAVE">SAVE</button>
+
+        <!-- ロード機能設定 -->
+        <label class="upload-label">
+          ファイルを選択
+          <input type="file" id="file">
+        </label>
+      </div>
+    
+    <!-- jsファイル読み込み -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="{% static 'js/slide.js' %}"></script>
+    <script src="{% static 'js/index.js' %}"></script>
+  </body>
+</html>
