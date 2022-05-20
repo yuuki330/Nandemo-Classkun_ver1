@@ -1,5 +1,5 @@
 python manage.py collectstatic
 git add .
-git commit -m "5/19 title_change ver1"
+git commit -m "5/20 remove previous version"
 @REM git push origin master
 git push heroku master
